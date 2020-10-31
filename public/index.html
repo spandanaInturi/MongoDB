@@ -1,38 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="It is a Personal Budget application"> <!--This is SEO change-->
-    <meta name="keywords" content="Budget, personal-budget"><!--This is a SEO change-->
-    <meta name="robots" content="index,follow" /><!--This is a SEO change-->
-    <title>Personal Budget</title><!--This is a SEO change-->
-    <meta property="og:description" content="personal budget application"/><!--This is SEO change-->
+    <!-- This is an SEO change which provides browsers with additional information so that it can be displayed earlier according to the page rank algorithm-->
+    <meta name="description" content="A website dedicated to help users with their budget management"> 
+    <title>Personal Budget Tracker</title> <!-- This is an SEO change where title description can be used to sort the page according to google page rankings -->
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./main.css">
+    <!-- This is an SEO change where providing duplicates to the original link would allow search engines to identify valid URL for the said webpage for ordering w.r.t page rank -->
+    <link href="http://165.227.202.5/pb/index.html" rel="canonical">
 </head>
 <body>
-    <a class="skip" href='#main'>Skip to content</a><!--This is A11Y change -->
-    <nav role="navigation"> <!--This is a semantic change--><!--role attribute is an A11y Change -->
+    <!-- This is a Semantic HTML Change where we use a native nav tag for navigation bar -->
+    <nav>
         <ul>
-            <li><a href="./index.html" rel ="canonical">Home</a></li><!--This is SEO change-->
-            <li><a href="./about.html" rel="canonical">About</a></li><!--This is SEO change-->
-            <li><a href="./login.html" rel ="canonical">Login</a></li><!--This is SEO change-->
-            <li><a href="https://google.com" rel="nofollow">Google</a></li><!--This is  SEO change-->
+            <!-- these are A11y Changes where we provide a title to the hyperlink and is observed when we hover over it -->
+            <li><a href="./index.html" title="Visit our HomePage">HomePage</a></li>
+            <!-- This is an A11y Change where we can skip the tab activity on "about" and "login" tabs because they are not fully implemented yet -->            
+            <li><a href="./about.html" tabindex=-1 title="Visit the About Page">About</a></li>
+            <li><a href="./login.html" tabindex=-1 title="Login to Your Account">Login</a></li>
+            <!-- This is an SEO change where we add a rel=dofollow to ensure the site's reputation before we navigate to third party websites. Providing credibility to the third party links improves page ranking--> 
+            <li><a href="https://google.com" rel="dofollow" target="_blank" title="Get Additional Info">Google</a></li> 
         </ul>
     </nav>
-   
-    <header role="banner">  <!--This is a semantic change--><!--role  attribute is an A11y Change -->
+
+     <div class="hero">
         <h1>Personal Budget</h1>
         <h2>A personal-budget management app</h2>
-    </header>
+    </div>   
+    
+    <!-- This is an A11y Change where we add skip to content by pressing the tab key to access it and navigating to the main content of the webpage-->
+    <a id="skip" alt="skip to content" href="#maincontent">Skip to Content</a>
 
-    <section class ="container center" aria-label =" main content of budget"><!--This is a semantic change and A11y change-->
-        <div id= "main">
-        <div class="page-area">
 
-            <article><!--This is a semantic change-->
+    <div class="container center">
+
+        <div class="page-area" id="maincontent">
+
+            <!-- This is a Semantic HTML Change where we use the native article tag instead of a div to align elements -->           
+            <article>
+                <h1>Stay on track</h1>
+                <p>
+                    Do you know where you are spending your money? If you really stop to track it down,
+                    you would get surprised! Proper budget management depends on real data... and this
+                    app will help you with that!
+                </p>
+            </article>
+             
+            <article>            
+                <h1>Alerts</h1>
+                <p>
+                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
+                </p>            
+            </article>
+
+            <article>
+                <h1>Results</h1>
+                <p>
+                    People who stick to a financial plan, budgeting every expense, get out of debt faster!
+                    Also, they to live happier lives... since they expend without guilt or fear... 
+                    because they know it is all good and accounted for.
+                </p>
+            </article>
+               
+
+            <article>
+                <h1>Free</h1>
+                <p>
+                    This app is free!!! And you are the only one holding your data!
+                </p>
+            </article>
+
+
+            <article>
                 <h1>Stay on track</h1>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
@@ -41,14 +82,15 @@
                 </p>
             </article>
     
-            <article aria-label="alert"><!--This is A11Y change-->
+            <article>
                 <h1>Alerts</h1>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </article>
     
-            <article aria-label="Results"><!--This is A11Y change-->
+            
+            <article>
                 <h1>Results</h1>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
@@ -57,217 +99,211 @@
                 </p>
             </article>
     
-            <article aria-label="Free"><!--This is A11Y change-->
+           
+            <article>
                 <h1>Chart</h1>
                 <p>
                     <canvas id="myChart" width="400" height="400"></canvas>
                 </p>
-            </article>
-            
+            </article>                 
+
         </div>
-    </div>
 
-    </section>
-
-   
+    </div>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-     <script>
-         var dataSource = {
-             datasets : [ {
-                 data: [],
-                 backgroundColor: [
-                            '#F1C40F',
-                            '#FF5733',
-                            '#F08080',
-                            '#5DADE2',
-                            '#196F3D',
-                            '#E74C3C',
-                            '#FA8072',
-             ]
-                 
-             }],
-             labels: []
 
-         };
-         function getBudget(){
-             axios.get('http://localhost:3000/budget').then(function (res) {
+    <script>
+        var dataSource = {
+        datasets: [{
+            data: [],
+            backgroundColor : [
                 
-                
-                for(var i =0;i<res.data.mybudget.length;i++){
-                     dataSource.datasets[0].data[i] = res.data.mybudget[i].budget
-                     dataSource.labels[i] = res.data.mybudget[i].title
-                 }
-                 change(randomData());
-            createCharts();  
+            ]
+        }],
 
-             });
-         }
-         
-         function createCharts(){
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
             
-             var ctx = document.getElementById('myChart').getContext('2d');
-             var piechart = new Chart(ctx , {
-                 type: 'pie',
-                 data : dataSource
-             });
-                
+        ]
+    };
+    function createChart(){
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myPieChart = new Chart(ctx,{
+            type: 'pie',
+            data : dataSource
+        })
+    }     
 
-         }
-         getBudget()
-     </script>
+    function getBudget(){
+        axios.get('http://localhost:3000/budget')
+        .then(function(res){
 
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script>         
+            console.log(res.data);
+            for(var i=0;i<res.data.length;i++){
+                dataSource.datasets[0].data[i] = res.data[i].budget;
+                dataSource.labels[i] = res.data[i].title;
+                dataSource.datasets[0].backgroundColor[i] = res.data[i].color;
+            }
+            change(randomData());
+            createChart();            
+        })
+    }        
+    getBudget();    
+</script>   
 
-var svg = d3.select("body")
-.append("svg")
-.append("g")
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>         
+    
+    var svg = d3.select("body")
+	.append("svg")
+	.append("g")
 
 svg.append("g")
-.attr("class", "slices");
+	.attr("class", "slices");
 svg.append("g")
-.attr("class", "labels");
+	.attr("class", "labels");
 svg.append("g")
-.attr("class", "lines");
+	.attr("class", "lines");
 
 var width = 960,
-height = 450,
-radius = Math.min(width, height) / 2;
+    height = 450,
+	radius = Math.min(width, height) / 2;
 
 var pie = d3.layout.pie()
-.sort(null)
-.value(function(d) {       
-    
-    return d.value;
-});
+	.sort(null)
+	.value(function(d) {       
+        console.log(d); 
+		return d.value;
+	});
 
 var arc = d3.svg.arc()
-.outerRadius(radius * 0.8)
-.innerRadius(radius * 0.4);
+	.outerRadius(radius * 0.8)
+	.innerRadius(radius * 0.4);
 
 var outerArc = d3.svg.arc()
-.innerRadius(radius * 0.9)
-.outerRadius(radius * 0.9);
+	.innerRadius(radius * 0.9)
+	.outerRadius(radius * 0.9);
 
 svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 var key = function(d){ return d.data.label; };
 
 var color = d3.scale.ordinal()    
-.range(["#ffcd56", "#ff6384","#36a2eb", "#fd6b19","#fdfd19", "#189c40", "#04350c", "#652e7a"]);
+	.range(dataSource.datasets[0].backgroundColor);
 
 function randomData (){
-var labels =  dataSource.labels;
-var values = dataSource.datasets[0].data;    
-return labels.map(function(label,value){
-    return { label: label, value: values[value] }
-});
+    var labels =  dataSource.labels;
+    var values = dataSource.datasets[0].data;    
+    var colors = dataSource.datasets[0].backgroundColor;
+	return labels.map(function(label,value){
+		return { label: label, value: values[value],color:colors }
+	});
 }
 
 
 function change(data) {
 
+    /* ------- PIE SLICES -------*/
+    console.log(data);
+	var slice = svg.select(".slices").selectAll("path.slice")
+		.data(pie(data), key);
+    console.log(data);
+	slice.enter()
+		.insert("path")
+		.style("fill", function(d) {                 
+            console.log(data);        
+            return color(d.data.label); })
+		.attr("class", "slice");
 
+	slice		
+		.transition().duration(1000)
+		.attrTween("d", function(d) {            
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				return arc(interpolate(t));
+			};
+		})
 
-var slice = svg.select(".slices").selectAll("path.slice")
-    .data(pie(data), key);
+	slice.exit()
+		.remove();
 
-slice.enter()
-    .insert("path")
-    .style("fill", function(d) {                 
-              
-        return color(d.data.label); })
-    .attr("class", "slice");
+	/* ------- TEXT LABELS -------*/
 
-slice		
-    .transition().duration(1000)
-    .attrTween("d", function(d) {            
-        this._current = this._current || d;
-        var interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function(t) {
-            return arc(interpolate(t));
-        };
-    })
+	var text = svg.select(".labels").selectAll("text")
+		.data(pie(data), key);
 
-slice.exit()
-    .remove();
+	text.enter()
+		.append("text")
+		.attr("dy", ".50em")
+		.text(function(d) {
+			return d.data.label;
+		});
+	
+	function midAngle(d){
+		return d.startAngle + (d.endAngle - d.startAngle)/2;
+	}
 
+	text.transition().duration(1000)
+		.attrTween("transform", function(d) {
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+            this._current = interpolate(0);
+            console.log(d);
+			return function(t) {
+				var d2 = interpolate(t);
+				var pos = outerArc.centroid(d2);
+				pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
+				return "translate("+ pos +")";
+			};
+		})
+		.styleTween("text-anchor", function(d){
+            console.log(d)
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				var d2 = interpolate(t);
+				return midAngle(d2) < Math.PI ? "start":"end";
+			};
+		});
 
+	text.exit()
+		.remove();
 
-var text = svg.select(".labels").selectAll("text")
-    .data(pie(data), key);
+	/* ------- SLICE TO TEXT POLYLINES -------*/
 
-text.enter()
-    .append("text")
-    .attr("dy", ".50em")
-    .text(function(d) {
-        return d.data.label;
-    });
+	var polyline = svg.select(".lines").selectAll("polyline")
+		.data(pie(data), key);
+	
+	polyline.enter()
+		.append("polyline");
 
-function midAngle(d){
-    return d.startAngle + (d.endAngle - d.startAngle)/2;
-}
-
-text.transition().duration(1000)
-    .attrTween("transform", function(d) {
-        this._current = this._current || d;
-        var interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-       
-        return function(t) {
-            var d2 = interpolate(t);
-            var pos = outerArc.centroid(d2);
-            pos[0] = radius * (midAngle(d2) < Math.PI ? 1 : -1);
-            return "translate("+ pos +")";
-        };
-    })
-    .styleTween("text-anchor", function(d){
-        
-        this._current = this._current || d;
-        var interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function(t) {
-            var d2 = interpolate(t);
-            return midAngle(d2) < Math.PI ? "start":"end";
-        };
-    });
-
-text.exit()
-    .remove();
-
-
-
-var polyline = svg.select(".lines").selectAll("polyline")
-    .data(pie(data), key);
-
-polyline.enter()
-    .append("polyline");
-
-polyline.transition().duration(1000)
-    .attrTween("points", function(d){
-        this._current = this._current || d;
-        var interpolate = d3.interpolate(this._current, d);
-        this._current = interpolate(0);
-        return function(t) {
-            var d2 = interpolate(t);
-            var pos = outerArc.centroid(d2);
-            pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
-            return [arc.centroid(d2), outerArc.centroid(d2), pos];
-        };			
-    });
-
-polyline.exit()
-    .remove();
+	polyline.transition().duration(1000)
+		.attrTween("points", function(d){
+			this._current = this._current || d;
+			var interpolate = d3.interpolate(this._current, d);
+			this._current = interpolate(0);
+			return function(t) {
+				var d2 = interpolate(t);
+				var pos = outerArc.centroid(d2);
+				pos[0] = radius * 0.95 * (midAngle(d2) < Math.PI ? 1 : -1);
+				return [arc.centroid(d2), outerArc.centroid(d2), pos];
+			};			
+		});
+	
+	polyline.exit()
+		.remove();
 };
 </script>
+
+
+    
+    <!-- This is a Semantic HTML Change where we use native footer tag to implement footer -->
+    <footer>
+        All rights reserved &copy; Fabio Nolasco
+    </footer>   
 </body>
-
-<footer aria-label="bottom"><!--This is a semantic change--><!--bottom is a A11y attribute-->
-    <div class="center">
-        All rights reserved &copy; Spandana Inturi
-    </div>
-</footer>
-
 </html>
